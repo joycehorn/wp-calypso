@@ -4,10 +4,10 @@
     "map",
     "markdown",
     "publicize",
+    "related-posts",
     "simple-payments"
   ],
   "beta": [
-    "related-posts",
     "shortlinks",
     "subscriptions",
     "tiled-gallery",
