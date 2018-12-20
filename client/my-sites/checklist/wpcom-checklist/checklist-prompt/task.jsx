@@ -20,6 +20,17 @@ class ChecklistPromptTask extends PureComponent {
 		onClick: PropTypes.func,
 		title: PropTypes.node.isRequired,
 		translate: PropTypes.func.isRequired,
+		closePopover: PropTypes.func.isRequired,
+	};
+
+	dismissPopup = () => {
+		//Remove query string, too
+		this.props.closePopover();
+	};
+
+	goToAction = () => {
+		this.props.onClick();
+		this.props.closePopover();
 	};
 
 	render() {
@@ -28,8 +39,9 @@ class ChecklistPromptTask extends PureComponent {
 			return null;
 		}
 
-		const { description, onClick, title, duration, translate } = this.props;
+		const { description, title, duration, translate, onClick } = this.props;
 		const { buttonText = translate( 'Do it!' ) } = this.props;
+		const dismissButtonText = translate( 'Dismiss' );
 
 		return (
 			<>
@@ -41,10 +53,13 @@ class ChecklistPromptTask extends PureComponent {
 					</div>
 					<div className="checklist-prompt__actions">
 						{ onClick && (
-							<Button onClick={ onClick } className="checklist-prompt__button" primary>
+							<Button onClick={ this.goToAction } className="checklist-prompt__button" primary>
 								{ buttonText }
 							</Button>
 						) }
+						<Button onClick={ this.dismissPopup } className="checklist-prompt__button">
+							{ dismissButtonText }
+						</Button>
 					</div>
 				</div>
 			</>
