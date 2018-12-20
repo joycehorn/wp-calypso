@@ -34,7 +34,7 @@ const ClosureNotice = ( {
 
 	if ( currentDate.isBefore( i18n.moment.utc( closureStartDate ) ) ) {
 		message = translate(
-			'{{strong}}Note:{{/strong}} Concierge will be closed %(closureStartDate)s through ' +
+			'{{strong}}Note:{{/strong}} Support session will be closed %(closureStartDate)s through ' +
 				'%(closureEndDate)s for the %(holidayName)s holiday. If you need to get in touch ' +
 				'with us, you’ll be able to {{link}}submit a support request{{/link}} and we’ll ' +
 				'get to it as fast as we can.',
@@ -52,9 +52,9 @@ const ClosureNotice = ( {
 		);
 	} else {
 		message = translate(
-			'{{strong}}Note:{{/strong}} Concierge is closed today for the %(holidayName)s holiday. ' +
+			'{{strong}}Note:{{/strong}} Support session is closed today for the %(holidayName)s holiday. ' +
 				'If you need to get in touch with us, you’ll be able to {{link}}submit a support ' +
-				'request{{/link}} and we’ll get back to you as fast as we can. Concierge will ' +
+				'request{{/link}} and we’ll get back to you as fast as we can. Support session will ' +
 				'reopen on %(reopenDate)s. Thank you!',
 			{
 				args: {
